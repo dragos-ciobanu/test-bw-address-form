@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('address.index');
-});
+Route::get('/', [AddressController::class, 'index']);
 
 Route::resource('address', AddressController::class);

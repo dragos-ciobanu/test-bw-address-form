@@ -15,7 +15,7 @@ class AddressController extends Controller
      */
     public function index()
     {
-        $addresses = DB::table('addresses')->paginate(10);
+        $addresses = DB::table('addresses')->orderByDesc('created_at')->paginate(10);
 
         return view('address.index', [
             'addresses' => $addresses
